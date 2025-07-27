@@ -22,14 +22,14 @@ A web-based Library Management System built with Django. This project allows use
 
 ## 📂 Project Structure
 
+```
 library_management/
 │
-├── library_management/ # Django project config
-├── library/ # Django app for core logic
-├── static/ # Static files (CSS, JS)
-├── templates/ # HTML templates
-├── db.sqlite3 # Default SQLite database
-├── manage.py # Django management script
-├── requirements.txt # Python dependencies
-
----
+├── library_management/    # Django project config
+├── library/               # Django app for core logic
+├── static/                # Static files (CSS, JS)
+├── templates/             # HTML templates
+├── db.sqlite3             # Default SQLite database
+├── manage.py              # Django management script
+├── requirements.txt       # Python dependencies
+```
