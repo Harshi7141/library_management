@@ -6,7 +6,7 @@ A web-based Library Management System built with Django. This project allows use
 
 ## 🚀 Features
 
-- Add, update books
+- Add, view, update books
 - Static and dynamic templates using Django's template engine
 
 ---
