@@ -67,6 +67,8 @@ border-radius: 5px;
 <th>ISBN</th>
 <th>Author</th>
 <th>Category</th>
+<th>Update Book</th>
+
 </tr>
 </thead>
 <tfoot>
@@ -83,6 +85,7 @@ border-radius: 5px;
       <td>{{book.isbn}}</td>
       <td>{{book.author}}</td>
       <td>{{book.category}}</td>
+      <td><a style="text-decoration: none; color: black;" href="{% url 'updatebook' book.id %}">Update</a></td>
     </tr>
   {% endfor %}
 </tbody>

@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
 from . import forms,models
+from .models import Book
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import Group
 from django.contrib import auth
@@ -35,7 +37,7 @@ def adminsignup_view(request):
             my_admin_group = Group.objects.get_or_create(name='ADMIN')
             my_admin_group[0].user_set.add(user)
 
-            return HttpResponseRedirect('adminlogin')
+            return HttpResponseRedirect('adminlogin') 
     return render(request,'library/adminsignup.html',{'form':form})
 
 
@@ -54,6 +56,20 @@ def addbook_view(request):
 def viewbook_view(request):
     books=models.Book.objects.all()
     return render(request,'library/viewbook.html',{'books':books})
+
+def updatebook_view(request, id):
+    book = get_object_or_404(Book,id=id)
+    form = forms.BookForm(instance=book)
+
+    if request.method=='POST':
+        form = forms.BookForm(request.POST, instance=book)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('viewbook')
+        else:
+            pass
+
+    return render(request, 'library/updatebook.html',{'form':form})
 
 def aboutus_view(request):
     return render(request,'library/aboutus.html')
