@@ -65,9 +65,8 @@ def updatebook_view(request, id):
         form = forms.BookForm(request.POST, instance=book)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('viewbook')
-        else:
-            pass
+            return HttpResponseRedirect('/viewbook')
+        
 
     return render(request, 'library/updatebook.html',{'form':form})
 

@@ -13,7 +13,7 @@ urlpatterns = [
     path('adminlogin', LoginView.as_view(template_name='library/adminlogin.html')),
     path('addbook', views.addbook_view),
     path('viewbook', views.viewbook_view),
-    path('updatebook/<int:id>/',views.updatebook_view,name='updatebook'),
+    path('updatebook/<int:id>/',views.updatebook_view, name='updatebook'),
     path('aboutus', views.aboutus_view),
     path('contactus', views.contactus_view),
     
